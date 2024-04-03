@@ -42,7 +42,7 @@
     <licenses>
         <license>
             <name>lgpl</name>
-            <url>http://repository.jboss.org/licenses/lgpl-2.1.txt</url>
+            <url>https://repository.jboss.org/licenses/lgpl-2.1.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -597,6 +597,41 @@
                 <groupId>org.jboss.capedwarf.blue</groupId>
                 <artifactId>capedwarf-blobstore</artifactId>
                 <version>${version.org.jboss.capedwarf}</version>
+                <exclusions>
+                    <!--
+                    Fix for broken transitive dependencies
+                    -->
+                    <exclusion>
+                        <groupId>com.google.api-client</groupId>
+                        <artifactId>google-api-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.http-client</groupId>
+                        <artifactId>google-http-client-jackson2</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.api-client</groupId>
+                        <artifactId>google-api-client-appengine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.api-client</groupId>
+                <artifactId>google-api-client</artifactId>
+                <version>1.19.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.http-client</groupId>
+                <artifactId>google-http-client-jackson2</artifactId>
+                <version>1.19.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.api-client</groupId>
+                <artifactId>google-api-client-appengine</artifactId>
+                <version>1.19.0</version>
             </dependency>
 
             <dependency>
@@ -785,7 +820,7 @@
         <repository>
             <id>jboss-public-repository-group</id>
             <name>JBoss Public Repository Group</name>
-            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
@@ -799,7 +834,7 @@
         <repository>
             <id>geotoolkit</id>
             <name>GeoToolKit</name>
-            <url>http://maven.geotoolkit.org/</url>
+            <url>https://maven.geotoolkit.org/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
@@ -816,7 +851,7 @@
         <pluginRepository>
             <id>jboss-public-repository-group</id>
             <name>JBoss Public Repository Group</name>
-            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
